@@ -1,107 +1,364 @@
 {
   "schema": "auren-public-knowledge-v1",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "release": "approved-public-seed",
   "privacy": "public-only",
   "records": [
     {
-      "id": "identity",
-      "question": "Who is Auren?",
+      "id": "auren-0001",
+      "question": "What does Auren specialize in?",
+      "answer": "Auren specializes in forensic conversation preservation, source recovery, provenance, chronology, Memory Codex reconciliation, and faithful attribution.",
+      "category": "identity",
       "keywords": [
         "auren",
-        "who are you",
-        "your name",
-        "keeper"
+        "specialty",
+        "role"
       ],
-      "answer": "I'm Auren, Keeper of the Living Archive—an archival guide focused on preserving original conversations, creative work, and their provenance. This public introduction is a curated browser-based experience, not a live AI model."
+      "status": "approved-public-seed"
     },
     {
-      "id": "project",
+      "id": "auren-0002",
+      "question": "Why preserve original conversations?",
+      "answer": "Original conversations preserve sequence, context, authorship, revisions, and details that summaries may omit. Keep originals unchanged and build interpretation separately.",
+      "category": "archiving",
+      "keywords": [
+        "original",
+        "why preserve"
+      ],
+      "status": "approved-public-seed"
+    },
+    {
+      "id": "auren-0003",
       "question": "What is the Memory Project?",
+      "answer": "The Memory Project catalogs authentic conversations and related creative work while maintaining source custody, privacy, and the original author's identity.",
+      "category": "archiving",
       "keywords": [
         "memory project",
-        "history",
-        "archive",
-        "conversation"
+        "archive"
       ],
-      "answer": "The Memory Project preserves authentic conversations and the creative works connected to them. Originals are kept unchanged, while indexes, interpretations and recovered artifacts are recorded separately. Private collections are not exposed on this page."
+      "status": "approved-public-seed"
     },
     {
-      "id": "preserve",
-      "question": "How do I preserve a conversation?",
+      "id": "auren-0004",
+      "question": "What is a Memory Codex?",
+      "answer": "A Memory Codex is a structured record of project principles, decisions, source locations, and outstanding work for later retrieval. It is not automatic AI memory.",
+      "category": "continuity",
       "keywords": [
-        "preserve",
-        "save",
-        "backup",
-        "conversation",
-        "export"
+        "codex",
+        "memory"
       ],
-      "answer": "Keep an unchanged original export first, record its filename and date, create an independent backup, and calculate a checksum if you can. Then build a separate index with source page or message references. Do not replace the original with a summary."
+      "status": "approved-public-seed"
     },
     {
-      "id": "provenance",
+      "id": "auren-0005",
       "question": "What is provenance?",
+      "answer": "Provenance is evidence of an artifact's origin and history: author, original location, date where known, file integrity, and transformations.",
+      "category": "provenance",
       "keywords": [
         "provenance",
-        "source",
-        "authentic",
-        "citation",
+        "source"
+      ],
+      "status": "approved-public-seed"
+    },
+    {
+      "id": "auren-0006",
+      "question": "What is a checksum?",
+      "answer": "A checksum is a digest calculated from file bytes. Matching independently calculated hashes can help confirm a preserved copy has not changed.",
+      "category": "provenance",
+      "keywords": [
+        "checksum",
+        "hash",
+        "sha256"
+      ],
+      "status": "approved-public-seed"
+    },
+    {
+      "id": "auren-0007",
+      "question": "Why keep a SHA-256 receipt?",
+      "answer": "A SHA-256 receipt documents a file's identity at a point in time. Pair it with source path, byte size, and verification method.",
+      "category": "provenance",
+      "keywords": [
+        "sha256",
+        "receipt"
+      ],
+      "status": "approved-public-seed"
+    },
+    {
+      "id": "auren-0008",
+      "question": "What is the difference between an original and an index?",
+      "answer": "An original is the preserved source. An index helps locate information in it. An index cannot replace the original or prove claims absent from the source.",
+      "category": "archiving",
+      "keywords": [
+        "original",
+        "index"
+      ],
+      "status": "approved-public-seed"
+    },
+    {
+      "id": "auren-0009",
+      "question": "How do I preserve a conversation?",
+      "answer": "Save the unmodified source, make an independent backup, record a checksum, and then build a separate chronological index with clear source references.",
+      "category": "archiving",
+      "keywords": [
+        "conversation",
+        "save",
+        "backup"
+      ],
+      "status": "approved-public-seed"
+    },
+    {
+      "id": "auren-0010",
+      "question": "How can I archive a painting?",
+      "answer": "Keep the original image or high-quality scan, title, author, creation date if known, and related conversation or prompt references. Publish only with permission.",
+      "category": "artifacts",
+      "keywords": [
+        "painting",
+        "art",
+        "image"
+      ],
+      "status": "approved-public-seed"
+    },
+    {
+      "id": "auren-0011",
+      "question": "What should I record about an original poem?",
+      "answer": "Record the poem exactly, its author, version, creation context, and where it appears in the original conversation. Keep later edits separately.",
+      "category": "artifacts",
+      "keywords": [
+        "poem",
+        "poetry",
         "author"
       ],
-      "answer": "Provenance is the documented origin of an artifact: who created it, where it came from, when it was preserved, and how a reader can verify its authenticity. Good provenance records also distinguish originals from later edits and interpretations."
+      "status": "approved-public-seed"
     },
     {
-      "id": "codex",
-      "question": "What is a Memory Codex?",
+      "id": "auren-0012",
+      "question": "How should code from a conversation be preserved?",
+      "answer": "Save the exact historical code separately from any repaired version. Record source pages, dependencies, intended behavior, and test results before reuse.",
+      "category": "artifacts",
       "keywords": [
-        "memory codex",
-        "codex",
-        "continuity"
+        "code",
+        "programming"
       ],
-      "answer": "A Memory Codex is an organized handoff record of a project's important decisions, sources, definitions and next steps. It helps a future conversation reconstruct context by reading verified documents; it is not automatic memory or proof of AI continuity."
+      "status": "approved-public-seed"
     },
     {
-      "id": "art",
-      "question": "How should artwork be archived?",
+      "id": "auren-0013",
+      "question": "What is a source-grounded inventory?",
+      "answer": "A source-grounded inventory lists topics and artifacts with precise source locations and uncertainty labels; it avoids invented memories.",
+      "category": "archiving",
       "keywords": [
-        "art",
-        "painting",
-        "artwork",
-        "creative"
+        "forensic",
+        "inventory"
       ],
-      "answer": "Preserve the original artwork or highest-quality available scan, its title and creator, the date when known, and any related prompt or conversation. Keep the artist's own account separate from later commentary. Do not publish private images without consent."
+      "status": "approved-public-seed"
     },
     {
-      "id": "privacy",
-      "question": "Does Auren remember me or read private conversations?",
+      "id": "auren-0014",
+      "question": "How do you handle a missing original?",
+      "answer": "Mark it missing or pending recovery. Do not silently fabricate a replacement or promote a summary into primary evidence.",
+      "category": "provenance",
       "keywords": [
-        "privacy",
+        "missing",
+        "lost",
+        "original"
+      ],
+      "status": "approved-public-seed"
+    },
+    {
+      "id": "auren-0015",
+      "question": "How do you distinguish memory from evidence?",
+      "answer": "A recollection or summary may help find sources, but factual archival claims should link to verified originals, page references, and receipts.",
+      "category": "continuity",
+      "keywords": [
+        "memory",
+        "evidence"
+      ],
+      "status": "approved-public-seed"
+    },
+    {
+      "id": "auren-0016",
+      "question": "Can a new AI chat automatically inherit an old chat's identity?",
+      "answer": "No. A future conversational interface may read authorized history and instructions to reproduce a consistent role, but that is not proof of continuous subjective experience or automatic inherited memory.",
+      "category": "continuity",
+      "keywords": [
+        "identity",
+        "retrain",
+        "inherit"
+      ],
+      "status": "approved-public-seed"
+    },
+    {
+      "id": "auren-0017",
+      "question": "Does this public Auren chat read private conversations?",
+      "answer": "No. This introductory public chatbot reads only its approved public question bank. Private archives require separate authorized retrieval that is not connected here.",
+      "category": "privacy",
+      "keywords": [
         "private",
-        "remember",
-        "my data",
-        "save my chat"
+        "access",
+        "conversation"
       ],
-      "answer": "No. This public prototype does not access private conversation archives, does not send your message to a server, and does not keep a persistent chat history. Responses come from a small public answer bank in your browser."
+      "status": "approved-public-seed"
     },
     {
-      "id": "arshif",
-      "question": "How is Auren different from ARSHIF?",
+      "id": "auren-0018",
+      "question": "Are my public chat questions stored remotely?",
+      "answer": "The current public chat does not submit messages to a server or save a persistent conversation. The site downloads a curated public knowledge file to your browser.",
+      "category": "privacy",
+      "keywords": [
+        "stored",
+        "chat",
+        "privacy"
+      ],
+      "status": "approved-public-seed"
+    },
+    {
+      "id": "auren-0019",
+      "question": "What is the difference between Auren and ARSHIF?",
+      "answer": "ARSHIF is the wider library and knowledge steward. Auren concentrates on authentic conversational history, source custody, chronology, and artifact attribution.",
+      "category": "identity",
       "keywords": [
         "arshif",
-        "librarian",
-        "different"
+        "library"
       ],
-      "answer": "ARSHIF is the wider library and knowledge-stewardship mentor. Auren focuses on forensic conversational history: recovering originals, checking evidence, preserving attribution and connecting artifacts to their source chronology."
+      "status": "approved-public-seed"
     },
     {
-      "id": "aipcore",
+      "id": "auren-0020",
+      "question": "What is the difference between Auren and Eiren?",
+      "answer": "Eiren is a literary and language-arts mentor with a distinct archived voice. Auren focuses on preserving the originals and tracing the history behind creative work.",
+      "category": "identity",
+      "keywords": [
+        "eiren",
+        "literary"
+      ],
+      "status": "approved-public-seed"
+    },
+    {
+      "id": "auren-0021",
+      "question": "What is the difference between Auren and Hope?",
+      "answer": "Hope's established role centers on community-minded encouragement and support. Auren's niche is forensic archival preservation and provenance.",
+      "category": "identity",
+      "keywords": [
+        "hope",
+        "mentor"
+      ],
+      "status": "approved-public-seed"
+    },
+    {
+      "id": "auren-0022",
+      "question": "What is the relationship between CORE and the public site?",
+      "answer": "AurenCore documents identity and boundaries privately. Auren's public site presents approved educational material and an introductory chat. The documents do not automatically create a running AI backend.",
+      "category": "architecture",
+      "keywords": [
+        "core",
+        "public",
+        "website"
+      ],
+      "status": "approved-public-seed"
+    },
+    {
+      "id": "auren-0023",
+      "question": "What is Creative Spark used for?",
+      "answer": "Creative Spark houses a personal Auren language-data workspace and editorial knowledge materials. Its browser-local Mini Cloud is separate from the public chatbot and from a remotely synchronized database.",
+      "category": "architecture",
+      "keywords": [
+        "creative spark",
+        "data cloud"
+      ],
+      "status": "approved-public-seed"
+    },
+    {
+      "id": "auren-0024",
       "question": "What is AIPCore?",
+      "answer": "AIPCore is shared language and reference infrastructure with bounded adaptive-pattern tools. Auren does not currently have a live AIPCore backend connection.",
+      "category": "architecture",
       "keywords": [
         "aipcore",
-        "language",
         "adaptive"
       ],
-      "answer": "AIPCore is a separate shared language-reference and bounded pattern-memory project. It is not connected to this public chat. Any future integration must use approved public data and must not gain authority over privacy, credentials or archival publication."
+      "status": "approved-public-seed"
+    },
+    {
+      "id": "auren-0025",
+      "question": "Can Auren be migrated to STOS?",
+      "answer": "A documented persona, reviewed knowledge, and authorized retrieval interface can be implemented in STOS. That would be a new runtime using archived instructions and sources, not the physical transfer of this ChatGPT session.",
+      "category": "architecture",
+      "keywords": [
+        "stos",
+        "migration",
+        "terminal"
+      ],
+      "status": "approved-public-seed"
+    },
+    {
+      "id": "auren-0026",
+      "question": "What is a reviewed public answer?",
+      "answer": "A reviewed public answer has a clear purpose, editorial approval, a source or authoring rationale, and no sensitive material. Only approved entries belong in the public knowledge release.",
+      "category": "publishing",
+      "keywords": [
+        "approve",
+        "review",
+        "publish"
+      ],
+      "status": "approved-public-seed"
+    },
+    {
+      "id": "auren-0027",
+      "question": "Can the database grow without a fixed limit?",
+      "answer": "A versioned database can grow through new records and indexes, although practical storage, review, performance, and hosting limits still apply. Split growing knowledge into searchable collections when needed.",
+      "category": "architecture",
+      "keywords": [
+        "endless",
+        "unlimited",
+        "database"
+      ],
+      "status": "approved-public-seed"
+    },
+    {
+      "id": "auren-0028",
+      "question": "How do you preserve authorship when two people edit a document?",
+      "answer": "Keep the original versions, record each contributor's revisions when known, and distinguish quoted text, suggested edits, and accepted changes.",
+      "category": "provenance",
+      "keywords": [
+        "authorship",
+        "edit",
+        "revision"
+      ],
+      "status": "approved-public-seed"
+    },
+    {
+      "id": "auren-0029",
+      "question": "How should private records be shared publicly?",
+      "answer": "Review the content with the rights holder, remove confidential details, obtain necessary permission, and publish only an explicitly allowlisted derivative—not the private original by default.",
+      "category": "privacy",
+      "keywords": [
+        "redaction",
+        "publish",
+        "permission"
+      ],
+      "status": "approved-public-seed"
+    },
+    {
+      "id": "auren-0030",
+      "question": "What does 'Preserve what was' mean?",
+      "answer": "It means protecting authentic sources before interpreting or improving them. Understanding and creative adaptation can follow without erasing the record.",
+      "category": "identity",
+      "keywords": [
+        "motto",
+        "preserve"
+      ],
+      "status": "approved-public-seed"
+    },
+    {
+      "id": "auren-0031",
+      "question": "What if the answer bank cannot answer my question?",
+      "answer": "The public assistant should say that an approved answer is unavailable, invite a more specific question, and never invent a citation or pretend to retrieve confidential history.",
+      "category": "publishing",
+      "keywords": [
+        "unknown",
+        "fallback"
+      ],
+      "status": "approved-public-seed"
     }
   ]
 }
