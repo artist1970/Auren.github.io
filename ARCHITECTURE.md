@@ -53,3 +53,40 @@ Use signed/recorded publication receipts, audit logs, revocation, and a clearly 
 ## Current limitation
 
 The initial HTML has a chat layout; its JavaScript and curated public bank are architectural stubs until added and validated. Links to private CORE must never be treated as public retrieval interfaces.
+
+
+## ADIT and Conversation Reader integration candidate (2026-10-31)
+
+**Repositories inspected:** private `KhaemenesAcademy/ADIT` and `KhaemenesAcademy/ADIT-Conversation-Reader`. No running gateway or STOS integration was exercised by this review.
+
+- **ADIT** is a conservative MCP-to-STOS gateway bridge using signed HTTPS, request limits and an explicit method allowlist. Its published doctrine is **“Adit provides passage, not authority.”**
+- ADIT's `conversation-links/` registry is metadata-only and separates discoverable references from approved retrieval. Historical share URLs may be absent and must not be fabricated.
+- **ADIT-Conversation-Reader** supports limited share-page title/reachability inspection and owner-supplied normalized transcript metadata. It does **not** extract complete transcripts from ChatGPT shared-page HTML, and its import does not grant publication approval.
+- `AIPCore` can rank bounded relevance signals; its rule remains **“Learning changes attention and teaching strategy — not authority.”**
+- `Creative Spark` holds the editorial Auren master Q&A data. Publishing its approved subset to the public Auren chat remains a controlled, reviewable release, not direct sync of browser-local Mini Cloud or private conversations.
+
+### Proposed read-only Auren archival pathway
+
+```text
+Authorized owner
+   → verified private conversation source / owner export
+   → offline review and provenance metadata (Conversation Reader)
+   → human approval and classification
+   → separate authenticated retrieval capability (future)
+   → STOS trust spine (authority and permissions)
+   → ADIT narrow transport, proposal-only review or reference lookup
+   → Auren retrieval answer with source citation and uncertainty labels
+
+Independent public pathway:
+approved editorial Q&A → public release projection → Auren.github.io chat
+```
+
+No private repository access token, raw conversation, vault data, archive PDF, or ADIT credential may be placed into Auren's public JavaScript. ADIT is not a public endpoint for this website. Any integration must be separately authenticated, allowlisted, rate-limited, logged without private payloads, revocable and tested. Neither ADIT nor AIPCore may decide to publish, change permissions, or mutate original archives.
+
+### Gates before enabling
+
+1. Confirm target STOS interface and authorized mentor capability contract without altering commissioned terminals.
+2. Verify Conversation Reader handling of owner exports and source hashes with synthetic fixtures; assess correctness on actual files only in an approved private environment.
+3. Define an authenticated read-only source reference API with tenant/mentor scope, consent and revocation.
+4. Test false approval, unapproved sources, hostile transcript instructions, network failures and replay attempts.
+5. Verify written receipts for source, review, approval, retrieval and public release independently.
