@@ -28,7 +28,20 @@ send.addEventListener("click",submit);
 input.addEventListener("keydown",e=>{if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();submit();}});
 clear.addEventListener("click",()=>{log.replaceChildren();lastReply="";stopSpeech();bubble("Auren","A new page begins. What would you like to preserve or explore?");});
 document.querySelectorAll("[data-question]").forEach(btn=>btn.addEventListener("click",()=>{input.value=btn.dataset.question||"";submit();}));
-async function load(){try{const r=await fetch("knowledge/public-qa.v1.json",{cache:"no-cache"});if(!r.ok)throw Error("unavailable");const data=await r.json();if(data.schema!=="auren-public-knowledge-v1"||!Array.isArray(data.records))throw Error("invalid");bank=data.records.filter(x=>x&&typeof x.question==="string"&&typeof x.answer==="string"&&Array.isArray(x.keywords)&&x.answer.length<3000);status.textContent="Public knowledge ready: "+bank.length+" curated topics. No private archive connection.";}catch{status.textContent="Public knowledge is unavailable; the introductory site remains accessible.";}}
+async function load(){try{const r=await fetch("knowledge/public-qa.v1.json",{cache:"no-cache"});if(!r.ok)throw Error("unavailable");const data=await r.json();if(data.schema!=="auren-public-knowledge-v1"||!Array.isArray(data.records))throw Error("invalid");bank=data.records.filter(x=>x&&typeof x.question==="string"&&typeof x.answer==="string"&&Array.isArray(x.keywords)&&x.answer.length<3000&&["approved-public","approved-public-seed"].includes(x.status));
+try{
+ const extraResponse=await fetch("knowledge/additions-0052-0063.json",{cache:"no-cache"});
+ if(extraResponse.ok){
+  const extra=await extraResponse.json();
+  if(extra.schema==="auren-public-knowledge-shard-v1"&&Array.isArray(extra.records)){
+   const seen=new Set(bank.map(x=>x.id));
+   for(const entry of extra.records){
+    if(entry&&typeof entry.id==="string"&&!seen.has(entry.id)&&typeof entry.question==="string"&&typeof entry.answer==="string"&&Array.isArray(entry.keywords)&&["approved-public","approved-public-seed"].includes(entry.status)){bank.unshift(entry);seen.add(entry.id);}
+   }
+  }
+ }
+}catch{}
+status.textContent="Public knowledge ready: "+bank.length+" curated topics. No private archive connection.";}catch{status.textContent="Public knowledge is unavailable; the introductory site remains accessible.";}}
 const speech=window.speechSynthesis,Speech=window.SpeechSynthesisUtterance,select=byId("voice-select"),volume=byId("volume"),pace=byId("pace"),audioStatus=byId("audio-status");
 function stopSpeech(){if(speech)speech.cancel();}
 function populate(){if(!speech||!select)return;voiceList=speech.getVoices();const previous=select.value;select.replaceChildren(new Option("Device default",""));voiceList.forEach((v,i)=>select.add(new Option(v.name+" ("+v.lang+")",String(i))));if(voiceList[Number(previous)])select.value=previous;}
