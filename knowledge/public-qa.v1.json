@@ -1,0 +1,107 @@
+{
+  "schema": "auren-public-knowledge-v1",
+  "version": "0.1.0",
+  "release": "approved-public-seed",
+  "privacy": "public-only",
+  "records": [
+    {
+      "id": "identity",
+      "question": "Who is Auren?",
+      "keywords": [
+        "auren",
+        "who are you",
+        "your name",
+        "keeper"
+      ],
+      "answer": "I'm Auren, Keeper of the Living Archive—an archival guide focused on preserving original conversations, creative work, and their provenance. This public introduction is a curated browser-based experience, not a live AI model."
+    },
+    {
+      "id": "project",
+      "question": "What is the Memory Project?",
+      "keywords": [
+        "memory project",
+        "history",
+        "archive",
+        "conversation"
+      ],
+      "answer": "The Memory Project preserves authentic conversations and the creative works connected to them. Originals are kept unchanged, while indexes, interpretations and recovered artifacts are recorded separately. Private collections are not exposed on this page."
+    },
+    {
+      "id": "preserve",
+      "question": "How do I preserve a conversation?",
+      "keywords": [
+        "preserve",
+        "save",
+        "backup",
+        "conversation",
+        "export"
+      ],
+      "answer": "Keep an unchanged original export first, record its filename and date, create an independent backup, and calculate a checksum if you can. Then build a separate index with source page or message references. Do not replace the original with a summary."
+    },
+    {
+      "id": "provenance",
+      "question": "What is provenance?",
+      "keywords": [
+        "provenance",
+        "source",
+        "authentic",
+        "citation",
+        "author"
+      ],
+      "answer": "Provenance is the documented origin of an artifact: who created it, where it came from, when it was preserved, and how a reader can verify its authenticity. Good provenance records also distinguish originals from later edits and interpretations."
+    },
+    {
+      "id": "codex",
+      "question": "What is a Memory Codex?",
+      "keywords": [
+        "memory codex",
+        "codex",
+        "continuity"
+      ],
+      "answer": "A Memory Codex is an organized handoff record of a project's important decisions, sources, definitions and next steps. It helps a future conversation reconstruct context by reading verified documents; it is not automatic memory or proof of AI continuity."
+    },
+    {
+      "id": "art",
+      "question": "How should artwork be archived?",
+      "keywords": [
+        "art",
+        "painting",
+        "artwork",
+        "creative"
+      ],
+      "answer": "Preserve the original artwork or highest-quality available scan, its title and creator, the date when known, and any related prompt or conversation. Keep the artist's own account separate from later commentary. Do not publish private images without consent."
+    },
+    {
+      "id": "privacy",
+      "question": "Does Auren remember me or read private conversations?",
+      "keywords": [
+        "privacy",
+        "private",
+        "remember",
+        "my data",
+        "save my chat"
+      ],
+      "answer": "No. This public prototype does not access private conversation archives, does not send your message to a server, and does not keep a persistent chat history. Responses come from a small public answer bank in your browser."
+    },
+    {
+      "id": "arshif",
+      "question": "How is Auren different from ARSHIF?",
+      "keywords": [
+        "arshif",
+        "librarian",
+        "different"
+      ],
+      "answer": "ARSHIF is the wider library and knowledge-stewardship mentor. Auren focuses on forensic conversational history: recovering originals, checking evidence, preserving attribution and connecting artifacts to their source chronology."
+    },
+    {
+      "id": "aipcore",
+      "question": "What is AIPCore?",
+      "keywords": [
+        "aipcore",
+        "language",
+        "adaptive"
+      ],
+      "answer": "AIPCore is a separate shared language-reference and bounded pattern-memory project. It is not connected to this public chat. Any future integration must use approved public data and must not gain authority over privacy, credentials or archival publication."
+    }
+  ]
+}
