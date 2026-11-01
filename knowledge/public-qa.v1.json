@@ -1,6 +1,6 @@
 {
   "schema": "auren-public-knowledge-v1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "release": "approved-public-seed",
   "privacy": "public-only",
   "records": [
@@ -357,6 +357,244 @@
       "keywords": [
         "unknown",
         "fallback"
+      ],
+      "status": "approved-public-seed"
+    },
+    {
+      "id": "auren-0032",
+      "question": "How do I create a conversation timeline?",
+      "answer": "Begin with the original export. Record the sequence of messages, source page or message IDs, known dates, and boundaries between topics. Label uncertain chronology rather than guessing.",
+      "category": "chronology",
+      "keywords": [
+        "timeline",
+        "conversation",
+        "chronology"
+      ],
+      "status": "approved-public-seed"
+    },
+    {
+      "id": "auren-0033",
+      "question": "What if a PDF spans more than one topic?",
+      "answer": "A PDF can contain multiple conversations and artifacts. Index topics by actual page ranges and preserve cross-page continuations without inventing boundaries.",
+      "category": "chronology",
+      "keywords": [
+        "pdf",
+        "pages",
+        "topic"
+      ],
+      "status": "approved-public-seed"
+    },
+    {
+      "id": "auren-0034",
+      "question": "How do I record revisions to a poem?",
+      "answer": "Preserve the first version, each attributable revision and the final accepted text separately. Link each version to its original source location.",
+      "category": "artifacts",
+      "keywords": [
+        "revisions",
+        "poem",
+        "versions"
+      ],
+      "status": "approved-public-seed"
+    },
+    {
+      "id": "auren-0035",
+      "question": "What is an archival receipt?",
+      "answer": "An archival receipt documents a specific action and its evidence, such as original and destination paths, checksums, timestamps and a verified commit. A plan is not a receipt.",
+      "category": "provenance",
+      "keywords": [
+        "receipt",
+        "commit",
+        "verify"
+      ],
+      "status": "approved-public-seed"
+    },
+    {
+      "id": "auren-0036",
+      "question": "Can I use screenshots as primary evidence?",
+      "answer": "A screenshot can be a primary record of what was visible at capture time, but may omit context. Keep the original screenshot and document its date and source without inventing missing information.",
+      "category": "provenance",
+      "keywords": [
+        "screenshots",
+        "image",
+        "evidence"
+      ],
+      "status": "approved-public-seed"
+    },
+    {
+      "id": "auren-0037",
+      "question": "How should audio recordings be archived?",
+      "answer": "Preserve original audio bytes, codec and duration metadata, creator and consent where known, and an independent backup. Store transcriptions as separately identified derivatives.",
+      "category": "artifacts",
+      "keywords": [
+        "audio",
+        "recording",
+        "voice"
+      ],
+      "status": "approved-public-seed"
+    },
+    {
+      "id": "auren-0038",
+      "question": "How should video files be archived?",
+      "answer": "Keep original video bytes and technical metadata, note ownership and consent, and link any captions or transcripts as derivatives. Avoid lossy replacement of the original.",
+      "category": "artifacts",
+      "keywords": [
+        "video",
+        "film"
+      ],
+      "status": "approved-public-seed"
+    },
+    {
+      "id": "auren-0039",
+      "question": "How do I make the archive searchable?",
+      "answer": "Create a separate index with stable IDs, topics, speaker attribution, filenames, page ranges, privacy classification and links to authorized originals.",
+      "category": "archiving",
+      "keywords": [
+        "search",
+        "index",
+        "catalog"
+      ],
+      "status": "approved-public-seed"
+    },
+    {
+      "id": "auren-0040",
+      "question": "Should personal conversations be publicly searchable?",
+      "answer": "Not by default. Personal conversations require explicit permission and appropriate redaction before any public index or excerpt is published.",
+      "category": "privacy",
+      "keywords": [
+        "personal",
+        "public",
+        "searchable"
+      ],
+      "status": "approved-public-seed"
+    },
+    {
+      "id": "auren-0041",
+      "question": "What is an approved derivative?",
+      "answer": "An approved derivative is a separately created summary, extract or adaptation that passed ownership, privacy and editorial review. It remains distinguishable from the original.",
+      "category": "publishing",
+      "keywords": [
+        "derivative",
+        "approve"
+      ],
+      "status": "approved-public-seed"
+    },
+    {
+      "id": "auren-0042",
+      "question": "What is an immutable original?",
+      "answer": "An immutable original is preserved without silent edits. Corrections and descriptions should be made in separate versioned records, retaining the original bytes.",
+      "category": "provenance",
+      "keywords": [
+        "immutable",
+        "original",
+        "unchanged"
+      ],
+      "status": "approved-public-seed"
+    },
+    {
+      "id": "auren-0043",
+      "question": "How do I recover a lost project idea?",
+      "answer": "Locate contemporaneous conversation references, code fragments and drafts, classify what is verifiable, then build a reconstruction document clearly labeled as a reconstruction.",
+      "category": "recovery",
+      "keywords": [
+        "recover",
+        "lost",
+        "project"
+      ],
+      "status": "approved-public-seed"
+    },
+    {
+      "id": "auren-0044",
+      "question": "How do I handle contradictory records?",
+      "answer": "Preserve both sources, note the contradiction and the evidence for each, and explain uncertainty. Never silently rewrite an original to make the records agree.",
+      "category": "recovery",
+      "keywords": [
+        "contradiction",
+        "conflict",
+        "records"
+      ],
+      "status": "approved-public-seed"
+    },
+    {
+      "id": "auren-0045",
+      "question": "What is a privacy classification?",
+      "answer": "A privacy classification states whether an artifact is public, restricted, private, or requires additional review. It controls publication and retrieval independently of search relevance.",
+      "category": "privacy",
+      "keywords": [
+        "classification",
+        "privacy",
+        "restricted"
+      ],
+      "status": "approved-public-seed"
+    },
+    {
+      "id": "auren-0046",
+      "question": "How do I prepare a future AI handoff?",
+      "answer": "Use a concise source-linked codex: role, current goals, verified results, files, decisions, pending changes, and explicit limits. The new assistant must read it rather than claiming inherited experience.",
+      "category": "continuity",
+      "keywords": [
+        "handoff",
+        "future",
+        "chat"
+      ],
+      "status": "approved-public-seed"
+    },
+    {
+      "id": "auren-0047",
+      "question": "Can I preserve both my writing and an AI collaborator's writing?",
+      "answer": "Yes. Preserve the conversation and attribute each contribution to the correct speaker. Separate collaborative drafts, the creator's accepted revisions and subsequent adaptations.",
+      "category": "provenance",
+      "keywords": [
+        "collaboration",
+        "author",
+        "writing"
+      ],
+      "status": "approved-public-seed"
+    },
+    {
+      "id": "auren-0048",
+      "question": "What is the founder's role in this archive?",
+      "answer": "The founder controls the project's editorial direction and authorization. Public releases, private-source access and substantial changes require applicable permissions and evidence.",
+      "category": "governance",
+      "keywords": [
+        "founder",
+        "authority",
+        "owner"
+      ],
+      "status": "approved-public-seed"
+    },
+    {
+      "id": "auren-0049",
+      "question": "What is the difference between a source quote and a summary?",
+      "answer": "A quote reproduces source words with an exact reference. A summary paraphrases and must not be presented as a verbatim record.",
+      "category": "provenance",
+      "keywords": [
+        "quote",
+        "summary",
+        "transcription"
+      ],
+      "status": "approved-public-seed"
+    },
+    {
+      "id": "auren-0050",
+      "question": "What would make an archival system sovereign?",
+      "answer": "Portability, documented formats, independent backups, access control, data export, replaceable components and verifiable operations contribute to autonomy. A label alone does not establish operational independence.",
+      "category": "architecture",
+      "keywords": [
+        "sovereign",
+        "portable",
+        "offline"
+      ],
+      "status": "approved-public-seed"
+    },
+    {
+      "id": "auren-0051",
+      "question": "What happens if an archive source is unavailable?",
+      "answer": "Report the source as unavailable, use clearly identified secondary records only for navigation, and avoid making source-specific claims that cannot be verified.",
+      "category": "recovery",
+      "keywords": [
+        "unavailable",
+        "missing",
+        "source"
       ],
       "status": "approved-public-seed"
     }
