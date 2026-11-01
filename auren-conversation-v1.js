@@ -6,13 +6,22 @@ if(!input||!send||!log)return;
 let bank=[],lastReply="",voiceList=[];
 const normalize=s=>String(s||"").toLowerCase().normalize("NFKC").replace(/[^\p{L}\p{N}\s]/gu," ").replace(/\s+/g," ").trim();
 function bubble(who,message){const box=document.createElement("div");box.className="bubble"+(who==="You"?" you":"");const speaker=document.createElement("div");speaker.className="speaker";speaker.textContent=who;const p=document.createElement("p");p.textContent=message;box.append(speaker,p);log.append(box);log.scrollTop=log.scrollHeight;}
-function words(s){return normalize(s).split(" ").filter(t=>t.length>2);}
+const ignored=new Set(["what","how","can","could","would","should","does","have","your","about","this","that","with","from","where","when","which","there","into","will","some","help","tell","please","know","want","give","make","here","them","their","then","more","the","are","you","and","for","why","who","do","is","a","an","my","me","to","in","of","on"]);
+function words(s){return normalize(s).split(" ").filter(t=>t.length>2&&!ignored.has(t));}
 function respond(question){
-  const q=normalize(question),terms=new Set(words(question));
-  if(!bank.length)return "The public knowledge file is not available. You can still explore the preservation principles on this page; the chat does not connect to private archives.";
-  let best=null,top=0;
-  for(const entry of bank){const keys=[entry.question,...entry.keywords];let score=0;for(const key of keys){const k=normalize(key);if(q===k)score+=15;else if(k.length>5&&q.includes(k))score+=7;const overlap=words(k).filter(w=>terms.has(w));score+=overlap.length;}if(score>top){top=score;best=entry;}}
-  return best&&top>=2?best.answer:"I don't have an approved public answer for that yet. You can ask about the Memory Project, provenance, preserving conversations, artwork, Memory Codices, or AIPCore. I won't invent access to private records.";
+ const q=normalize(question),terms=new Set(words(question));
+ if(!bank.length)return "The public knowledge file is not available. You can still explore the preservation principles on this page; the chat does not connect to private archives.";
+ let winner=null,best=0,runner=0;
+ for(const entry of bank){
+  const title=normalize(entry.question),keys=(entry.keywords||[]).map(normalize).filter(Boolean),titleTerms=new Set(words(title));
+  let score=q===title?100:0;
+  for(const k of keys){if(q===k)score=Math.max(score,65);else if(k.length>=6&&q.includes(k))score+=12;}
+  for(const t of terms){if(titleTerms.has(t))score+=5;else if(keys.some(k=>words(k).includes(t)))score+=3;}
+  if(terms.size&&[...terms].every(t=>titleTerms.has(t)))score+=8;
+  if(score>best){runner=best;best=score;winner=entry;}else if(score>runner)runner=score;
+ }
+ if(winner&&best>=9&&(best>=runner+3||best>=55))return winner.answer;
+ return "I don't have a sufficiently clear approved public answer for that question yet. Try asking specifically about preservation, provenance, source custody, creative works, Memory Codices, or our archive's privacy rules. I can't access private records here.";
 }
 function submit(){const q=input.value.trim();if(!q)return;if(q.length>1200)return;bubble("You",q);lastReply=respond(q);bubble("Auren",lastReply);input.value="";}
 send.addEventListener("click",submit);
