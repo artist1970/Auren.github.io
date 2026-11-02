@@ -14,11 +14,18 @@ section{padding:60px 0}.light{background:var(--paper);color:var(--ink)}.violet{b
 .chat-heading{text-align:center}.chat-heading p{max-width:800px;margin:0 auto 22px}.chat-wrap{max-width:975px;margin:23px auto 0;border:1px solid #8d7997;background:#211d2e;border-radius:7px;padding:22px}.chat-status{font-size:13px;color:#e7d1a5;min-height:22px}.messages{height:350px;overflow-y:auto;display:flex;flex-direction:column;gap:12px;padding:12px 4px 20px;border-bottom:1px solid #67566f}.bubble{max-width:91%;align-self:flex-start;padding:12px 15px;background:#393048;border:1px solid #766184;border-radius:7px;overflow-wrap:anywhere}.bubble.you{align-self:flex-end;background:#433b51}.speaker{font-size:12px;letter-spacing:.07em;color:var(--gold);text-transform:uppercase}.bubble p{white-space:pre-wrap;margin:4px 0 0}label{display:block;margin:14px 0 6px;color:#f4dfb2}textarea,select{background:#151722;color:#f8f1e8;border:1px solid #9885a1;border-radius:7px;padding:11px;width:100%}textarea{min-height:88px;resize:vertical}.controls{display:flex;flex-wrap:wrap;gap:9px;margin-top:11px}.controls button{cursor:pointer;min-height:43px;padding:9px 15px;border-radius:7px;border:1px solid var(--gold);background:var(--gold);color:#171926}.controls button.secondary{background:transparent;color:#fff}.audio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin-top:9px}.audio label{font-size:13px}.audio input{width:100%;accent-color:var(--gold)}.note{font-size:13px;color:#e0d1db}.prompts{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:15px 0}.prompts button{cursor:pointer;border:1px solid #ac8a9e;color:#f8edec;background:transparent;padding:8px 11px;border-radius:7px}
 .paths{background:#ded4dd;color:#211a2b}.paths .tile{background:#f9f5ef}footer{padding:28px 0;color:#e6d9e1;border-top:1px solid #71617b;font-size:13px;text-align:center}footer a{color:var(--gold)}.skip{position:absolute;left:-9999px;top:0}.skip:focus{left:10px;top:10px;background:#fff;color:#111;z-index:30;padding:9px}
 @media(max-width:760px){.grid{grid-template-columns:1fr}.audio{grid-template-columns:1fr}.toplinks{gap:10px}.hero{padding:60px 0}.chat-wrap{padding:14px}}@media(max-width:490px){.wrap{padding:0 15px}.bar{flex-wrap:wrap;padding:13px 0}.messages{height:320px}.bubble{max-width:98%}section{padding:45px 0}}
+
+/* Page-owned content only; official ecosystem components retain their own typography. */
+main{font-size:16px;line-height:1.65}
+main :is(p,li,label,input,textarea,select,button,a,small,.eyebrow,.kicker){font-size:16px}
+main h1{font-size:clamp(44px,7vw,88px)}
+main :is(.eyebrow,.kicker){letter-spacing:.12em}
+footer{background:#142432;color:#f6f0e6;font-size:16px}
 </style>
 </head>
 <body>
 <a class="skip" href="#talk">Skip to chat</a>
-<header><div class="wrap bar"><a class="wordmark" href="#top">Auren</a><nav class="toplinks" aria-label="Primary"><a href="#talk">Conversation</a><a href="#purpose">Purpose</a><a href="#pathways">Explore</a><a href="https://vervenveda.com/">Verve N Veda</a></nav></div></header>
+
 <main id="top">
 <section class="hero"><div class="wrap"><div class="eyebrow">Verve N Veda · The Memory Project</div><h1>Auren</h1><h2>Keeper of the Living Archive</h2><p>Every creation has a beginning. Every conversation carries a history. Here we explore how to preserve what matters, honor its authors, and make the past findable without changing its meaning.</p><p class="quote">“Preserve what was. Understand what is. Illuminate what may yet become.”</p><div class="actions"><a href="#talk">Talk with Auren</a><a class="outline" href="#purpose">Discover the mission</a></div></div></section>
 <section id="talk" class="violet"><div class="wrap"><div class="chat-heading"><div class="eyebrow">The conversation studio</div><h2>Talk with Auren</h2><p>Ask about archiving conversations, source attribution, preserving art, building a Memory Codex, or recovering a project’s history. The introductory chat uses a curated public answer bank and works without a private account or AI backend.</p></div>
@@ -34,4 +41,11 @@ section{padding:60px 0}.light{background:var(--paper);color:var(--ink)}.violet{b
 </main><footer><div class="wrap">Auren · Keeper of the Living Archive · Verve N Veda · 2026<br><span>Shared network. Distinct voices. Originals respected.</span></div></footer>
 <script src="auren-conversation-v1.js" defer></script>
 <script src="auren-public-lookup-v1.js" defer></script>
+
+<script src="https://vervenveda.com/assets/vnv-header-autopopulate.js"></script>
+<script>VNV_HEADER.mount({title:"Auren",subtitle:"Khaemenes Academy · AI Mentor",home:"https://vervenveda.com/"});</script>
+<script src="https://vervenveda.com/assets/vnv-ticker-autopopulate.js"></script>
+<script>VNV_TICKER.autoPopulate({label:"Auren · Quick Links",max:14});</script>
+<script src="https://vervenveda.com/assets/vnv-333-ticker.js"></script>
+<script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"></script>
 </body></html>
