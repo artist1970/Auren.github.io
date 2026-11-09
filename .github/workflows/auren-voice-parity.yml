@@ -1,0 +1,25 @@
+name: Auren voice parity regression
+on:
+  pull_request:
+    paths:
+      - 'index.html'
+      - 'auren-voice-parity-v1.js'
+      - 'tests/auren-voice-parity.test.mjs'
+      - '.github/workflows/auren-voice-parity.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'auren-voice-parity-v1.js'
+      - 'tests/auren-voice-parity.test.mjs'
+permissions:
+  contents: read
+jobs:
+  voice-parity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test tests/auren-voice-parity.test.mjs
