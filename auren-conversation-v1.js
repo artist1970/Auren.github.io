@@ -41,6 +41,7 @@ try{
   }
  }
 }catch{}
+try{const approvedResponse=await fetch("knowledge/mentor-approved-500.v1.json",{cache:"no-store"});if(approvedResponse.ok){const data=await approvedResponse.json();if(data.schema==="vnv-public-mentor-qa-v1"&&data.mentorId==="auren"&&data.records?.length===500){const seen=new Set();const selected=data.records.filter(r=>{const key=normalize(r.question);if(!key||seen.has(key)||!r.answer?.trim()||!(/^(approved|founder-approved-editorial)/.test(r.status)))return false;seen.add(key);return true;});if(selected.length===500){bank=selected;}}}}catch{};
 status.textContent="Public knowledge ready: "+bank.length+" curated topics. No private archive connection.";}catch{status.textContent="Public knowledge is unavailable; the introductory site remains accessible.";}}
 const speech=window.speechSynthesis,Speech=window.SpeechSynthesisUtterance,select=byId("voice-select"),volume=byId("volume"),pace=byId("pace"),audioStatus=byId("audio-status");
 function stopSpeech(){if(speech)speech.cancel();}
