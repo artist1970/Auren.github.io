@@ -4,6 +4,13 @@ on:
     paths:
       - 'index.html'
       - 'auren-voice-parity-v1.js'
+      - 'tests/auren-five-bubble.test.mjs'
+      - 'styles/auren-landing-refinement-v1.css'
+      - 'knowledge/drafts/**'
+      - 'knowledge/additions-0052-0063.json'
+      - 'knowledge/public-qa.v1.json'
+      - 'auren-public-lookup-v1.js'
+      - 'auren-conversation-v1.js'
       - 'tests/auren-voice-parity.test.mjs'
       - '.github/workflows/auren-voice-parity.yml'
   push:
@@ -11,6 +18,13 @@ on:
     paths:
       - 'index.html'
       - 'auren-voice-parity-v1.js'
+      - 'tests/auren-five-bubble.test.mjs'
+      - 'styles/auren-landing-refinement-v1.css'
+      - 'knowledge/drafts/**'
+      - 'knowledge/additions-0052-0063.json'
+      - 'knowledge/public-qa.v1.json'
+      - 'auren-public-lookup-v1.js'
+      - 'auren-conversation-v1.js'
       - 'tests/auren-voice-parity.test.mjs'
 permissions:
   contents: read
@@ -22,4 +36,4 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: node --test tests/auren-voice-parity.test.mjs
+      - run: node --test tests/auren-voice-parity.test.mjs tests/knowledge.test.mjs tests/auren-five-bubble.test.mjs
