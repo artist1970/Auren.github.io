@@ -22,13 +22,14 @@ main h1{font-size:clamp(44px,7vw,88px)}
 main :is(.eyebrow,.kicker){letter-spacing:.12em}
 footer{background:#142432;color:#f6f0e6;font-size:16px}
 </style>
+<link rel="stylesheet" href="styles/auren-landing-refinement-v1.css">
 </head>
 <body>
 <a class="skip" href="#talk">Skip to chat</a>
 
 <main id="top">
-<section class="hero"><div class="wrap"><div class="eyebrow">Verve N Veda · The Memory Project</div><h1>Auren</h1><h2>Keeper of the Living Archive</h2><p>Every creation has a beginning. Every conversation carries a history. Here we explore how to preserve what matters, honor its authors, and make the past findable without changing its meaning.</p><p class="quote">“Preserve what was. Understand what is. Illuminate what may yet become.”</p><div class="actions"><a href="#talk">Talk with Auren</a><a class="outline" href="#purpose">Discover the mission</a></div></div></section>
-<section id="talk" class="violet"><div class="wrap"><div class="chat-heading"><div class="eyebrow">The conversation studio</div><h2>Talk with Auren</h2><p>Ask about archiving conversations, source attribution, preserving art, building a Memory Codex, or recovering a project’s history. The introductory chat uses a curated public answer bank and works without a private account or AI backend.</p></div>
+<section class="hero" id="auren-introduction"><div class="wrap"><div class="eyebrow">Verve N Veda · The Memory Project</div><h1>Auren</h1><h2>Keeper of the Living Archive</h2><p>Every creation has a beginning. Every conversation carries a history. Here we explore how to preserve what matters, honor its authors, and make the past findable without changing its meaning.</p><p class="quote">“Preserve what was. Understand what is. Illuminate what may yet become.”</p><nav class="auren-hero-nav" aria-label="Auren's archive navigation"><a href="#talk">Talk with Auren</a><a href="#purpose">Discover the mission</a><a href="#auren-public-lookup">Public mentor references</a></nav></div></section>
+<section id="talk" class="violet"><nav class="auren-chat-anchor" aria-label="Archival conversation"><span>Auren · Living Archive Conversation</span><a href="#auren-introduction">Back to introduction ↑</a></nav><div class="wrap auren-chat-inner"><div class="chat-heading"><div class="eyebrow">The conversation studio</div><h2>Talk with Auren</h2><p>Ask about archiving conversations, source attribution, preserving art, building a Memory Codex, or recovering a project’s history. The introductory chat uses a curated public answer bank and works without a private account or AI backend.</p></div>
 <div class="prompts" aria-label="Example questions"><button type="button" data-question="What is the Memory Project?">The Memory Project</button><button type="button" data-question="How do I preserve a conversation?">Preserving a conversation</button><button type="button" data-question="What is provenance?">Provenance</button><button type="button" data-question="What is a Memory Codex?">Memory Codex</button></div>
 <div class="chat-wrap"><div id="knowledge-status" class="chat-status" aria-live="polite">Loading Auren's public knowledge…</div><div id="conversation" class="messages" role="log" aria-label="Conversation with Auren" aria-live="polite"></div>
 <label for="message">Your message</label><textarea id="message" maxlength="1200" placeholder="Hello Auren. How can I preserve the story behind a painting?"></textarea>
@@ -44,7 +45,9 @@ footer{background:#142432;color:#f6f0e6;font-size:16px}
   <p style="margin:9px auto 0;max-width:720px">Explore the Verve N Veda public learning, language, translation, Aurora and ARSHIF resource directory with Auren. Links are read-only; private mentor CORE and learner records remain protected.</p>
   <a href="https://artist1970.github.io/creative-spark.github.io/language-laboratory/?mentor=auren" style="display:inline-block;margin-top:10px;padding:10px 16px;border-radius:7px;background:#28332f;color:#f4f0e7;font:400 16px/1.5 Nunito,Arial,sans-serif;text-decoration:none">Explore Public Knowledge Directory</a>
 </section>
-</main><footer><div class="wrap">Auren · Keeper of the Living Archive · Verve N Veda · 2026<br><span>Shared network. Distinct voices. Originals respected.</span></div></footer>
+</main><footer class="auren-footer"><div class="wrap">Auren · Keeper of the Living Archive · Verve N Veda · 2026
+<nav class="auren-footer-nav" aria-label="Footer navigation"><a href="#auren-introduction">Introduction</a><a href="#talk">Conversation</a><a href="#auren-public-lookup">Mentor Library</a><a href="https://vervenveda.com/">Verve N Veda</a></nav>
+<span>Shared network. Distinct voices. Originals respected.</span></div></footer>
 <script src="auren-conversation-v1.js" defer></script><script src="auren-voice-parity-v1.js" defer></script>
 <script src="auren-public-lookup-v1.js" defer></script>
 
