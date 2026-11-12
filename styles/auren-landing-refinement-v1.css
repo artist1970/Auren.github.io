@@ -1,0 +1,33 @@
+/* Auren Living Archive · VNV/KA refinement without altering archival identity */
+:root{--radius:7px}
+html{scroll-padding-top:84px}
+body{font:400 18px/1.7 "Nunito","Brandon Grotesque",system-ui,sans-serif}
+.hero{min-height:max(640px,calc(100svh - 100px));display:grid;place-items:center;padding:78px 0}
+.hero .eyebrow{font:400 18px/1.5 Cinzel,Georgia,serif;letter-spacing:.05em;text-transform:none}
+.hero h1{font:400 clamp(54px,9vw,66px)/1.16 Cinzel,Georgia,serif;letter-spacing:.025em}
+.hero h2{font:400 clamp(23px,3vw,32px)/1.4 Cinzel,Georgia,serif}
+.hero p{font-size:18px;line-height:1.7}
+.toplinks,.toplinks a{font-size:16px;min-height:44px}
+section .eyebrow{font-size:16px;letter-spacing:.06em;text-transform:none}
+section h2{font:400 clamp(30px,4vw,44px)/1.35 Cinzel,Georgia,serif}
+.tile h3{font:400 24px/1.4 Cinzel,Georgia,serif}
+.tile p,.intro,.note,.chat-heading p,.chat-status,.bubble p{font-size:18px;line-height:1.65}
+.speaker{font-size:16px;letter-spacing:.02em}
+.grid{align-items:stretch}
+.tile,.chat-wrap,.bubble{border-radius:7px}
+.chat-status{min-height:30px}
+button,select,textarea,input,label{font-size:18px}
+button{min-height:44px}
+.auren-hero-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:30px}
+.auren-hero-nav a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 17px;background:#202724;border:1px solid #dfc58c;border-radius:7px;color:#fffaf0;font-size:16px}
+#talk{scroll-margin-top:80px;padding-top:0}
+.auren-chat-anchor{position:sticky;top:0;z-index:26;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;background:#202724;color:#fffaf0;padding:12px max(18px,calc((100vw - 1120px)/2));border-block:2px solid #dfc58c}
+.auren-chat-anchor span{font:400 18px/1.5 Cinzel,Georgia,serif}
+.auren-chat-anchor a{display:inline-flex;justify-content:center;align-items:center;min-height:44px;padding:10px 14px;border:1px solid #dfc58c;border-radius:7px;color:#fffaf0;font-size:16px;text-decoration:none}
+.auren-chat-inner{padding-top:42px}
+.auren-footer{background:#202724;color:#fffaf0;padding:32px 14px;text-align:center;font-size:16px}
+.auren-footer-nav{display:flex;gap:10px 18px;flex-wrap:wrap;justify-content:center;margin-top:14px}
+.auren-footer-nav a{font-size:16px;color:#fffaf0}
+#auren-auto-voice[aria-pressed=true]{background:#345348;color:#fffaf0}
+@media(max-width:700px){.hero{min-height:auto;padding:64px 0}.auren-chat-anchor{justify-content:center}.auren-chat-anchor a{width:100%}.auren-hero-nav{flex-direction:column}.auren-hero-nav a{width:100%}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
