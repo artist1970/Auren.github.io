@@ -10,6 +10,10 @@ const ignored=new Set(["what","how","can","could","would","should","does","have"
 function words(s){return normalize(s).split(" ").filter(t=>t.length>2&&!ignored.has(t));}
 function respond(question){
  const q=normalize(question),terms=new Set(words(question));
+ // The public page has no access to private originals and must not imply otherwise.
+ if(/\b(?:password|secret|api key|access token|bank account|ssn|social security|medical record|student record|private transcript|private archive|personal address)\b/i.test(question))
+  return "Please do not enter credentials, private transcripts, or identifying records here. I can explain how to preserve or document them safely, but cannot open your private originals.";
+ if(!q)return "You can begin by asking about source attribution, provenance, original records, or a Memory Codex.";
  if(!bank.length)return "The public knowledge file is not available. You can still explore the preservation principles on this page; the chat does not connect to private archives.";
  let winner=null,best=0,runner=0;
  for(const entry of bank){
@@ -20,7 +24,7 @@ function respond(question){
   if(terms.size&&[...terms].every(t=>titleTerms.has(t)))score+=8;
   if(score>best){runner=best;best=score;winner=entry;}else if(score>runner)runner=score;
  }
- if(winner&&best>=9&&(best>=runner+3||best>=55))return winner.answer;
+ if(winner&&best>=24&&(best>=runner+8||best>=90))return winner.answer;
  return "I don't have a sufficiently clear approved public answer for that question yet. Try asking specifically about preservation, provenance, source custody, creative works, Memory Codices, or our archive's privacy rules. I can't access private records here.";
 }
 function submit(){const q=input.value.trim();if(!q)return;if(q.length>1200)return;bubble("You",q);lastReply=respond(q);bubble("Auren",lastReply);input.value="";}
@@ -28,15 +32,17 @@ send.addEventListener("click",submit);
 input.addEventListener("keydown",e=>{if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();submit();}});
 clear.addEventListener("click",()=>{log.replaceChildren();lastReply="";stopSpeech();bubble("Auren","A new page begins. What would you like to preserve or explore?");});
 document.querySelectorAll("[data-question]").forEach(btn=>btn.addEventListener("click",()=>{input.value=btn.dataset.question||"";submit();}));
-async function load(){try{const r=await fetch("knowledge/public-qa.v1.json",{cache:"no-cache"});if(!r.ok)throw Error("unavailable");const data=await r.json();if(data.schema!=="auren-public-knowledge-v1"||!Array.isArray(data.records))throw Error("invalid");bank=data.records.filter(x=>x&&typeof x.question==="string"&&typeof x.answer==="string"&&Array.isArray(x.keywords)&&x.answer.length<3000&&["approved-public","approved-public-seed"].includes(x.status));
+async function load(){try{const r=await fetch("knowledge/public-qa.v1.json",{cache:"no-cache"});if(!r.ok)throw Error("unavailable");const data=await r.json();if(data.schema!=="auren-public-knowledge-v1"||!Array.isArray(data.records)||data.records.length!==51||data.privacy!=="public-only")throw Error("invalid");
+bank=data.records.filter(x=>x&&typeof x.id==="string"&&typeof x.question==="string"&&typeof x.answer==="string"&&Array.isArray(x.keywords)&&x.answer.length<3000&&["approved-public","approved-public-seed"].includes(x.status));
+if(bank.length!==51||new Set(bank.map(x=>x.id)).size!==51)throw Error("unapproved-bank");
 try{
  const extraResponse=await fetch("knowledge/additions-0052-0063.json",{cache:"no-cache"});
  if(extraResponse.ok){
   const extra=await extraResponse.json();
-  if(extra.schema==="auren-public-knowledge-shard-v1"&&Array.isArray(extra.records)){
+  if(extra.schema==="auren-public-knowledge-shard-v1"&&Array.isArray(extra.records)&&extra.records.length===12){
    const seen=new Set(bank.map(x=>x.id));
    for(const entry of extra.records){
-    if(entry&&typeof entry.id==="string"&&!seen.has(entry.id)&&typeof entry.question==="string"&&typeof entry.answer==="string"&&Array.isArray(entry.keywords)&&["approved-public","approved-public-seed"].includes(entry.status)){bank.unshift(entry);seen.add(entry.id);}
+    if(entry&&typeof entry.id==="string"&&!seen.has(entry.id)&&typeof entry.question==="string"&&typeof entry.answer==="string"&&entry.answer.length<=3000&&Array.isArray(entry.keywords)&&["approved-public","approved-public-seed"].includes(entry.status)){bank.push(entry);seen.add(entry.id);}
    }
   }
  }
