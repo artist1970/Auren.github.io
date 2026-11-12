@@ -8,6 +8,12 @@ const normalize=s=>String(s||"").toLowerCase().normalize("NFKC").replace(/[^\p{L
 function bubble(who,message){const box=document.createElement("div");box.className="bubble"+(who==="You"?" you":"");const speaker=document.createElement("div");speaker.className="speaker";speaker.textContent=who;const p=document.createElement("p");p.textContent=message;box.append(speaker,p);log.append(box);log.scrollTop=log.scrollHeight;}
 const ignored=new Set(["what","how","can","could","would","should","does","have","your","about","this","that","with","from","where","when","which","there","into","will","some","help","tell","please","know","want","give","make","here","them","their","then","more","the","are","you","and","for","why","who","do","is","a","an","my","me","to","in","of","on"]);
 function words(s){return normalize(s).split(" ").filter(t=>t.length>2&&!ignored.has(t));}
+function publicReference(question){
+ const hit=window.CreativeSparkMentorQA?.answer(question,{mentorId:"auren",scope:"living-archive"});
+ if(!hit)return null;
+ return "From "+hit.sourceName+"'s approved public knowledge: "+hit.answer+
+   " (Reference: "+hit.sourceName+" · "+hit.topic+".) Shall we examine the source or historical context?";
+}
 function respond(question){
  const q=normalize(question),terms=new Set(words(question));
  // The public page has no access to private originals and must not imply otherwise.
@@ -16,7 +22,7 @@ function respond(question){
  if(!q)return "You can begin by asking about source attribution, provenance, original records, or a Memory Codex.";
  const language=window.CreativeSparkLanguageRequest?.answer(question,{mentorId:"auren"});
  if(language)return language;
- if(!bank.length)return "The public knowledge file is not available. You can still explore the preservation principles on this page; the chat does not connect to private archives.";
+ if(!bank.length){const cross=publicReference(question);return cross||"The public knowledge file is not available. You can still explore the preservation principles on this page; the chat does not connect to private archives.";}
  let winner=null,best=0,runner=0;
  for(const entry of bank){
   const title=normalize(entry.question),keys=(entry.keywords||[]).map(normalize).filter(Boolean),titleTerms=new Set(words(title));
@@ -27,6 +33,7 @@ function respond(question){
   if(score>best){runner=best;best=score;winner=entry;}else if(score>runner)runner=score;
  }
  if(winner&&best>=24&&(best>=runner+8||best>=90))return winner.answer;
+ const cross=publicReference(question);if(cross)return cross;
  return "I don't have a sufficiently clear approved public answer for that question yet. Try asking specifically about preservation, provenance, source custody, creative works, Memory Codices, or our archive's privacy rules. I can't access private records here.";
 }
 function submit(){const q=input.value.trim();if(!q)return;if(q.length>1200)return;bubble("You",q);lastReply=respond(q);bubble("Auren",lastReply);input.value="";}

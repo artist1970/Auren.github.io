@@ -1,0 +1,23 @@
+name: Auren Public Mentor QA Federation
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'auren-conversation-v1.js'
+      - 'creative-spark-mentor-qa-v1.js'
+      - 'tests/auren-mentor-qa-federation.test.mjs'
+      - '.github/workflows/auren-mentor-qa-federation.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with: {persist-credentials: false}
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - run: node --test tests/auren-mentor-qa-federation.test.mjs
