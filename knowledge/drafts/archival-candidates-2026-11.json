@@ -1,0 +1,177 @@
+{
+  "schema": "auren-editorial-candidates-v1",
+  "owner": "auren",
+  "note": "Unpublished educational suggestions. Never load in the public chat without review and publication receipt.",
+  "records": [
+    {
+      "id": "auren-draft-2026-001",
+      "category": "provenance",
+      "question": "How can I record the origin of a recovered document?",
+      "proposedAnswer": "Record the source location, known author, date of capture and any verified original identifier. Mark unknowns clearly rather than inventing details.",
+      "status": "draft",
+      "classification": "public-candidate-unapproved",
+      "published": false,
+      "review": {
+        "accuracy": "pending",
+        "provenance": "pending",
+        "privacy": "pending",
+        "authorship": "pending",
+        "reviewer": null,
+        "approvedAt": null
+      }
+    },
+    {
+      "id": "auren-draft-2026-002",
+      "category": "source custody",
+      "question": "What is a chain of custody for a digital archive?",
+      "proposedAnswer": "It is a documented sequence of handling, transfers and checks that helps distinguish the original artifact from later working copies.",
+      "status": "draft",
+      "classification": "public-candidate-unapproved",
+      "published": false,
+      "review": {
+        "accuracy": "pending",
+        "provenance": "pending",
+        "privacy": "pending",
+        "authorship": "pending",
+        "reviewer": null,
+        "approvedAt": null
+      }
+    },
+    {
+      "id": "auren-draft-2026-003",
+      "category": "integrity",
+      "question": "How can I tell whether two digital files are identical?",
+      "proposedAnswer": "A matching cryptographic checksum can support byte-for-byte equivalence when computed carefully; it does not alone prove authorship or truth.",
+      "status": "draft",
+      "classification": "public-candidate-unapproved",
+      "published": false,
+      "review": {
+        "accuracy": "pending",
+        "provenance": "pending",
+        "privacy": "pending",
+        "authorship": "pending",
+        "reviewer": null,
+        "approvedAt": null
+      }
+    },
+    {
+      "id": "auren-draft-2026-004",
+      "category": "conversation",
+      "question": "How should I preserve the order of messages?",
+      "proposedAnswer": "Keep source timestamps, message order and speaker labels together. If time zones or missing passages are uncertain, label that uncertainty.",
+      "status": "draft",
+      "classification": "public-candidate-unapproved",
+      "published": false,
+      "review": {
+        "accuracy": "pending",
+        "provenance": "pending",
+        "privacy": "pending",
+        "authorship": "pending",
+        "reviewer": null,
+        "approvedAt": null
+      }
+    },
+    {
+      "id": "auren-draft-2026-005",
+      "category": "attribution",
+      "question": "What if a conversation excerpt has no known author?",
+      "proposedAnswer": "Label the author as unverified, document where the excerpt came from, and avoid assigning credit without supporting evidence.",
+      "status": "draft",
+      "classification": "public-candidate-unapproved",
+      "published": false,
+      "review": {
+        "accuracy": "pending",
+        "provenance": "pending",
+        "privacy": "pending",
+        "authorship": "pending",
+        "reviewer": null,
+        "approvedAt": null
+      }
+    },
+    {
+      "id": "auren-draft-2026-006",
+      "category": "classification",
+      "question": "How do I separate an original from a summary?",
+      "proposedAnswer": "Store the original unchanged, put summaries in distinct derivative files, and link each summary to the source and creation date.",
+      "status": "draft",
+      "classification": "public-candidate-unapproved",
+      "published": false,
+      "review": {
+        "accuracy": "pending",
+        "provenance": "pending",
+        "privacy": "pending",
+        "authorship": "pending",
+        "reviewer": null,
+        "approvedAt": null
+      }
+    },
+    {
+      "id": "auren-draft-2026-007",
+      "category": "privacy",
+      "question": "Should I publish old private conversations?",
+      "proposedAnswer": "Not automatically. Check consent, sensitivity and publication authority first, and keep restricted originals out of public files.",
+      "status": "draft",
+      "classification": "public-candidate-unapproved",
+      "published": false,
+      "review": {
+        "accuracy": "pending",
+        "provenance": "pending",
+        "privacy": "pending",
+        "authorship": "pending",
+        "reviewer": null,
+        "approvedAt": null
+      }
+    },
+    {
+      "id": "auren-draft-2026-008",
+      "category": "recovery",
+      "question": "How should I document a failed recovery attempt?",
+      "proposedAnswer": "Record what was checked, which tools were used, what remained unavailable, and the exact uncertainty. A failed search is not proof the material never existed.",
+      "status": "draft",
+      "classification": "public-candidate-unapproved",
+      "published": false,
+      "review": {
+        "accuracy": "pending",
+        "provenance": "pending",
+        "privacy": "pending",
+        "authorship": "pending",
+        "reviewer": null,
+        "approvedAt": null
+      }
+    },
+    {
+      "id": "auren-draft-2026-009",
+      "category": "metadata",
+      "question": "Why do archival receipts need stable identifiers?",
+      "proposedAnswer": "Stable identifiers help people trace specific artifacts, revisions and decisions without relying on ambiguous filenames.",
+      "status": "draft",
+      "classification": "public-candidate-unapproved",
+      "published": false,
+      "review": {
+        "accuracy": "pending",
+        "provenance": "pending",
+        "privacy": "pending",
+        "authorship": "pending",
+        "reviewer": null,
+        "approvedAt": null
+      }
+    },
+    {
+      "id": "auren-draft-2026-010",
+      "category": "continuity",
+      "question": "What does an archival handoff need?",
+      "proposedAnswer": "Preserve the current scope, verified sources, unresolved questions, permissions and next steps, with dates and references where possible.",
+      "status": "draft",
+      "classification": "public-candidate-unapproved",
+      "published": false,
+      "review": {
+        "accuracy": "pending",
+        "provenance": "pending",
+        "privacy": "pending",
+        "authorship": "pending",
+        "reviewer": null,
+        "approvedAt": null
+      }
+    }
+  ]
+}
