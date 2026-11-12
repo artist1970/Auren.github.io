@@ -26,6 +26,7 @@ on:
       - 'auren-public-lookup-v1.js'
       - 'auren-conversation-v1.js'
       - 'tests/auren-voice-parity.test.mjs'
+      - '.github/workflows/auren-voice-parity.yml'
 permissions:
   contents: read
 jobs:
