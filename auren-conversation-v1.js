@@ -14,6 +14,8 @@ function respond(question){
  if(/\b(?:password|secret|api key|access token|bank account|ssn|social security|medical record|student record|private transcript|private archive|personal address)\b/i.test(question))
   return "Please do not enter credentials, private transcripts, or identifying records here. I can explain how to preserve or document them safely, but cannot open your private originals.";
  if(!q)return "You can begin by asking about source attribution, provenance, original records, or a Memory Codex.";
+ const language=window.CreativeSparkLanguageRequest?.answer(question,{mentorId:"auren"});
+ if(language)return language;
  if(!bank.length)return "The public knowledge file is not available. You can still explore the preservation principles on this page; the chat does not connect to private archives.";
  let winner=null,best=0,runner=0;
  for(const entry of bank){
